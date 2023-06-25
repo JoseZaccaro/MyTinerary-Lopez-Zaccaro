@@ -24,7 +24,7 @@ const items = [
 
     [
     {id: 9, altText: 'Sao Paulo',src:'SaoPaulo.jpg',caption: 'Brazil'},
-    {id: 10, altText: 'Córdoba',src:'opcionCordoba.jpg',caption: 'Argentina'},
+    {id: 10, altText: 'Córdoba',src:'OpcionCordoba.jpg',caption: 'Argentina'},
     {id: 11, altText: 'Toronto',src:'Toronto.jpg',caption: 'Canada'},
     {id: 12, altText: 'Miami',src:'Miami.jpg',caption: 'USA'},2 ]
 
