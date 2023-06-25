@@ -4,7 +4,7 @@ const citiesActions = {
 
     getAllCities: ()=>{
         return (dispatch,getState)=>{
-                axios.get("http://localhost:4000/api/cities")
+                axios.get("https://mytinerary-backend.onrender.com/api/cities")
                 .then(data => {
                     if(data.data.success){        
                         dispatch({type:'ALL_CITIES', payload: {cities: data.data.response, citiesReference:data.data.response, error:false }})
@@ -29,7 +29,7 @@ const citiesActions = {
     },
     findCity: (id)=>{
         return (dispatch, getState)=>{
-                axios.get(`http://localhost:4000/api/city/${id}`)
+                axios.get(`https://mytinerary-backend.onrender.com/api/city/${id}`)
                 .then(respuesta => {
                     if(respuesta.data.success){
                         dispatch({type:'FIND_CITY', payload: {city: respuesta.data.response, error:false}})

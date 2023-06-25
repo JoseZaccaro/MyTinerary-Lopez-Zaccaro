@@ -4,7 +4,7 @@ const itinerariesActions = {
 
     findItineraries: (id)=>{
         return (dispatch, getState)=>{
-            axios.get(`http://localhost:4000/api/itineraries/${id}`)
+            axios.get(`https://mytinerary-backend.onrender.com/api/itineraries/${id}`)
             .then(res => dispatch({type: 'FIND_ITINERARIES', payload: {itineraries:res.data.response}}))
             .catch(error =>   dispatch({type:'FIND_ITINERARIES', payload:{error:true}}))
         }
@@ -16,8 +16,8 @@ const itinerariesActions = {
     },
     getActivitiesAndComments: (id)=>{
         return async(dispatch,getState)=>{
-            const activities = await axios.get("http://localhost:4000/api/activity/"+id)
-            const comments = await axios.get("http://localhost:4000/api/comments/"+id)
+            const activities = await axios.get("https://mytinerary-backend.onrender.com/api/activity/"+id)
+            const comments = await axios.get("https://mytinerary-backend.onrender.com/api/comments/"+id)
             if(activities.data.success){
                return {comments:comments.data.response, activities:activities.data.response.activities}
             }else{
@@ -29,7 +29,7 @@ const itinerariesActions = {
         return async(dispatch, getState)=>{
             let user = localStorage.getItem("token")
             if(comment.trim() !== "" && user){
-                const commentToPost = await axios.post("http://localhost:4000/api/comments/"+itineraryId,{comment},{
+                const commentToPost = await axios.post("https://mytinerary-backend.onrender.com/api/comments/"+itineraryId,{comment},{
                 headers:{
                 'Authorization':'Bearer '+ user
             }})
@@ -40,7 +40,7 @@ const itinerariesActions = {
     deleteComment: (commentId, itineraryId)=>{
         return async(dispatch, getState)=>{
             let user = localStorage.getItem("token")
-            const comments = await axios.put("http://localhost:4000/api/comments/"+itineraryId,{commentId,delete:true},{
+            const comments = await axios.put("https://mytinerary-backend.onrender.com/api/comments/"+itineraryId,{commentId,delete:true},{
                 headers:{
                 'Authorization':'Bearer '+ user
             }})
@@ -52,7 +52,7 @@ const itinerariesActions = {
     modifyComment: (comment, commentId, itineraryId)=>{
         return async(dispatch, getState)=>{
             let user = localStorage.getItem("token")
-            const comments = await axios.put("http://localhost:4000/api/comments/"+itineraryId,{comment, commentId, delete:false},{
+            const comments = await axios.put("https://mytinerary-backend.onrender.com/api/comments/"+itineraryId,{comment, commentId, delete:false},{
                 headers:{
                 'Authorization':'Bearer '+ user
             }})
@@ -63,7 +63,7 @@ const itinerariesActions = {
     },
     likeOrDislike: (data)=>{
         return async (dispatch, getState)=>{
-            const likes = await axios.put("http://localhost:4000/api/like/"+data.itineraryId,{userId:data.userId,like:data.like})
+            const likes = await axios.put("https://mytinerary-backend.onrender.com/api/like/"+data.itineraryId,{userId:data.userId,like:data.like})
             if(likes.data.success){
                 return likes.data.response
             }else{

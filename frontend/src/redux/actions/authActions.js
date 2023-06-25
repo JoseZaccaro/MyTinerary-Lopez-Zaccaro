@@ -4,7 +4,7 @@ const authActions = {
     signUp: (formData)=>{
         return async (dispatch, getState)=>{
             try{
-            const userToLogg = await axios.post("http://localhost:4000/api/auth/signUp", formData)
+            const userToLogg = await axios.post("https://mytinerary-backend.onrender.com/api/auth/signUp", formData)
             if(userToLogg.data.success){
                 dispatch({type:"SIGN_IN", payload: userToLogg.data})
             }else{
@@ -19,7 +19,7 @@ const authActions = {
     signIn: (formData)=>{
         return async(dispatch, getState) =>{
             try{
-            const userToLogg = await axios.post("http://localhost:4000/api/auth/signIn", formData)
+            const userToLogg = await axios.post("https://mytinerary-backend.onrender.com/api/auth/signIn", formData)
             if(userToLogg.data.success){
                 dispatch({type: "SIGN_IN", payload: userToLogg.data})
             }else{
@@ -33,7 +33,7 @@ const authActions = {
     signInLS:(userToken)=>{
         return async(dispatch, getState)=>{
             try{
-            const userToLogg = await axios.get("http://localhost:4000/api/auth/signInLS",{
+            const userToLogg = await axios.get("https://mytinerary-backend.onrender.com/api/auth/signInLS",{
                 headers:{
                 'Authorization':'Bearer '+ userToken
             }
@@ -81,7 +81,7 @@ const authActions = {
     updateUser: (updates)=>{
         return async (dispatch, getState)=>{
             try{
-                const userUpdate = await axios.put("http://localhost:4000/api/auth/userUpdate",updates)
+                const userUpdate = await axios.put("https://mytinerary-backend.onrender.com/api/auth/userUpdate",updates)
                 if(userUpdate.data.success){
                     dispatch({type:'SIGN_IN',payload: userUpdate.data})
                     return {success:true}
@@ -96,7 +96,7 @@ const authActions = {
     getUser: (email)=>{
         return async (dispatch, getState)=>{
             try{
-                const user = await axios.post("http://localhost:4000/api/auth/user",{email})
+                const user = await axios.post("https://mytinerary-backend.onrender.com/api/auth/user",{email})
                 return user
             }catch (error){
                 console.log(error)
