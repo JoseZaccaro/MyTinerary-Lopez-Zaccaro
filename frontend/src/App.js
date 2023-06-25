@@ -19,7 +19,7 @@ import io from 'socket.io-client'
   }
 
   componentDidMount(){
-   const socket = io('http://localhost:4000/')
+   const socket = io('https://mytinerary-backend.onrender.com/')
     this.setState({
       ...this.state,
       socket
