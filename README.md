@@ -6,7 +6,7 @@ los cuales pueden ser Likeados como tambien Comentados por usuarios.
 # Trabajo realizado 📋
 
 Aplicacion web desarrollada de forma individual en cinco semanas desarrollada como parte del programa de programacion web Full Stack MERN realizado en MindHub, siguiendo buenas prácticas y metodologias ágiles para la elaboracion de la misma.
-Podran ver la aplicacion web en: https://mytinerary-lopez-zaccaro.herokuapp.com/
+Podran ver la aplicacion web en: [MyTinerary!](https://mytinerary-frontend.onrender.com)
 
 # Construido con 🛠️
 * [MongoDB](https://www.mongodb.com/) - Base de datos
