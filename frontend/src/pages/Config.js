@@ -178,7 +178,7 @@ class Config extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                        : <div key={index}>
+                                        : field !== "country" && <div key={index}>
                                             <label htmlFor={field} ref={field === "image" && this.imageRef} className="config-label">Here enter your new {field === "firstName" ? "First Name" : field === "lastName" ? "last Name" : field} <div className="edit-user" style={editUser} ></div></label>
 
                                             <div className="fileinputs" style={{ cursor: 'pointer' }}>
