@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import authActions from "../redux/actions/authActions";
 import { GoogleLogin } from 'react-google-login';
 import { toast, Bounce } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
 import Input from "../components/Input";
 
 class Sign extends React.Component {
@@ -31,11 +30,6 @@ class Sign extends React.Component {
     form = ""
     page = ""
 
-    componentDidMount() {
-        this.props.fetchCountries()
-            .then(res => this.setState({ countries: res.response }))
-            .catch(res => this.setState({ countries: res.response }))
-    }
 
     input = e => {
         const field = e.target.name
@@ -143,6 +137,7 @@ class Sign extends React.Component {
     }
 
     render() {
+
         this.page = this.props.match.params.inUp;
         let key
         let style
@@ -162,6 +157,11 @@ class Sign extends React.Component {
         let googleSign = evaluate ? "Sign In whit google" : "Sign Up with Google"
         let formToRender = evaluate ? Object.keys(this.state.logInForm) : Object.keys(this.state.registerForm)
 
+        if (this.state.countries.length === 0 && !evaluate) {
+            this.props.fetchCountries()
+                .then(res => this.setState({ countries: res.response }))
+                .catch(res => this.setState({ countries: res.response }))
+        }
         return (
             <>
                 <div className="contenedor">

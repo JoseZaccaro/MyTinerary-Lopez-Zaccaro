@@ -6,7 +6,6 @@ import Activity from './Activity'
 import Comment from "./Comment";
 import Input from './Input'
 import { toast, Bounce} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";  
 
 
@@ -38,6 +37,7 @@ const Itinerary = (props) => {
       console.log("relooad")
       reloadCommentsFunction()
     })
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
 

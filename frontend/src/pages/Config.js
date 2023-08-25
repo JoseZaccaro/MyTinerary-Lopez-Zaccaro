@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import authActions from '../redux/actions/authActions'
 import { toast, Bounce } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
 import Loader from "react-loader";
 import Input from '../components/Input'
 
