@@ -27,7 +27,7 @@ import ReactiveButton from 'reactive-button';
             />
             </div>
             
-         <div className="click-here"style={{backgroundImage:"url('./assets/clickhere.png')"}} 
+         <div className="click-here"style={{backgroundImage:"url('./assets/clickhere.png')", backgroundSize:'contain'}} 
          onClick={toTop}
          />
     </Link>
